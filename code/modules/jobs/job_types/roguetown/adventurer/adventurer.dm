@@ -21,8 +21,8 @@ GLOBAL_VAR_INIT(hugbox_duration_still, 3 MINUTES)
 	show_in_credits = FALSE
 	min_pq = 0
 	max_pq = null
-	
-	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)
+
+	advclass_cat_rolls = list(CTAG_ADVENTURER = 40)
 	PQ_boost_divider = 10
 
 	wanderer_examine = TRUE
@@ -30,7 +30,7 @@ GLOBAL_VAR_INIT(hugbox_duration_still, 3 MINUTES)
 	advjob_examine = TRUE
 	always_show_on_latechoices = TRUE
 	job_reopens_slots_on_death = TRUE
-	same_job_respawn_delay = 15 MINUTES
+	same_job_respawn_delay = 1 MINUTES
 
 
 /datum/job/roguetown/adventurer/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

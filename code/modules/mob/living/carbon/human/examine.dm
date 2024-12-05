@@ -304,7 +304,7 @@
 			. += "<span class='warning'>[m1] tied up with \a [handcuffed]!</span>"
 		else
 			. += "<A href='?src=[REF(src)];item=[SLOT_HANDCUFFED]'><span class='warning'>[m1] tied up with \a [handcuffed]!</span></A>"
- 
+
 	if(legcuffed)
 		. += "<A href='?src=[REF(src)];item=[SLOT_LEGCUFFED]'><span class='warning'>[m3] \a [legcuffed] around [m2] legs!</span></A>"
 
@@ -545,7 +545,7 @@
 				var/W = LAZYACCESS(heart.maniacs2wonder_ids, M)
 				var/N = M.owner?.name
 				. += span_notice("Inscryption[N ? " by [N]'s " : ""][W ? "Wonder #[W]" : ""]: [K ? K : ""]")
-				
+
 
 	if(Adjacent(user) || aghost_privilege)
 		if(observer_privilege)

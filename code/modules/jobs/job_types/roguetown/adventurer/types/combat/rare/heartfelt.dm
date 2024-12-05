@@ -1,4 +1,4 @@
-	
+
 /datum/advclass/heartfeltlord
 	name = "Lord of Heartfelt"
 	tutorial = "You are the proud lord of heartfelt \
@@ -7,7 +7,6 @@
 	allowed_races = RACES_TOLERATED_UP
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfeltlord
 	maximum_possible_slots = 1
-	pickprob = 100
 	traits_applied = list(TRAIT_NOBLE, TRAIT_NOSEGRAB, TRAIT_HEAVYARMOR)
 	category_tags = list(CTAG_DISABLED)
 

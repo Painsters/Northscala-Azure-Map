@@ -197,7 +197,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
-	
+
 	S["defiant"]			>> defiant
 
 	//try to fix any outdated data if necessary
@@ -330,6 +330,24 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		charflaw = GLOB.character_flaws[charflaw]
 		charflaw = new charflaw()
 
+/datum/preferences/proc/_load_statpack(S)
+	var/statpack_type
+	S["statpack"] >> statpack_type
+	if (statpack_type)
+		statpack = new statpack_type()
+	else
+		statpack = pick(GLOB.statpacks)
+		statpack = GLOB.statpacks[statpack]
+		//statpack = new statpack
+
+/datum/preferences/proc/_load_virtue(S)
+	var/virtue_type
+	S["virtue"] >> virtue_type
+	if (virtue_type)
+		virtue = new virtue_type()
+	else
+		virtue = new /datum/virtue/none
+
 /datum/preferences/proc/_load_appearence(S)
 	S["real_name"]			>> real_name
 	S["gender"]				>> gender
@@ -385,7 +403,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Species
 	_load_species(S)
 
+	_load_virtue(S)
 	_load_flaw(S)
+
+	// LETHALSTONE edit: jank-ass load our statpack choice
+	_load_statpack(S)
 
 	if(!S["features["mcolor"]"] || S["features["mcolor"]"] == "#000")
 		WRITE_FILE(S["features["mcolor"]"]	, "#FFF")
@@ -430,7 +452,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null
 
-	S["nudeshot_link"]			>> nudeshot_link
+	S["null_link"]			>> nudeshot_link
 	if(!valid_headshot_link(null, nudeshot_link, TRUE))
 		nudeshot_link = null
 
@@ -547,6 +569,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_mcolor2"]					, features["mcolor2"])
 	WRITE_FILE(S["feature_mcolor3"]					, features["mcolor3"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
+	WRITE_FILE(S["statpack"]					, statpack.type)
+	WRITE_FILE(S["virtue"]					, virtue.type)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -576,10 +600,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// Descriptor entries
 	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
 	WRITE_FILE(S["custom_descriptors"] , custom_descriptors)
-	
+
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
-	WRITE_FILE(S["nudeshot_link"] , nudeshot_link)
+	WRITE_FILE(S["null_link"] , nudeshot_link)
 
 	return TRUE
 

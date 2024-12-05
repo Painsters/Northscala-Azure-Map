@@ -83,6 +83,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/eye_color = "000"				//Eye color
 	var/voice_color = "a0a0a0"
 	var/voice_pitch = 1
+	var/datum/statpack/statpack	= new /datum/statpack/wildcard/fated // LETHALSTONE EDIT: the statpack we're giving our char instead of racial bonuses
+	var/datum/virtue/virtue = new /datum/virtue/none // LETHALSTONE EDIT: the virtue we get for not picking a statpack
 	var/detail_color = "000"
 	var/datum/species/pref_species = new /datum/species/human/northern()	//Mutant race
 	var/static/datum/species/default_species = new /datum/species/human/northern()
@@ -317,6 +319,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
 //			dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Always Random Species: [(randomise[RANDOM_SPECIES]) ? "Yes" : "No"]</A><br>"
+// LETHALSTONE EDIT BEGIN: add statpack selection
+			dat += "<b>Statpack:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
 
 			if(!(AGENDER in pref_species.species_traits))
 				var/dispGender
@@ -339,6 +343,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE_ANTAG]'>When Antagonist: [(randomise[RANDOM_AGE_ANTAG]) ? "Yes" : "No"]</A>"
 
 //			dat += "<b><a href='?_src_=prefs;preference=name;task=random'>Random Name</A></b><BR>"
+			dat += "<b>Virtue:</b> <a href='?_src_=prefs;preference=virtue;task=input'>[virtue]</a><BR>"
 			dat += "<b>Flaw:</b> <a href='?_src_=prefs;preference=charflaw;task=input'>[charflaw]</a><BR>"
 			var/datum/faith/selected_faith = GLOB.faithlist[selected_patron?.associated_faith]
 			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
@@ -402,9 +407,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			if(headshot_link != null)
 				dat += "<a href='?_src_=prefs;preference=view_headshot;task=input'>View</a>"
 
-			dat += "<br><b>Nudeshot(3:4):</b> <a href='?_src_=prefs;preference=nudeshot;task=input'>Change</a>"
+			dat += "<br><b>null(3:4):</b> <a href='?_src_=prefs;preference=null;task=input'>Change</a>"
 			if(nudeshot_link != null)
-				dat += "<a href='?_src_=prefs;preference=view_nudeshot;task=input'>View</a>"
+				dat += "<a href='?_src_=prefs;preference=view_null;task=input'>View</a>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -1472,6 +1477,25 @@ Slots: [job.spawn_positions]</span>
 						ResetJobs()
 						to_chat(user, "<font color='red'>Classes reset.</font>")
 
+				if ("statpack")
+					var/list/statpacks_available = list()
+					for (var/path as anything in GLOB.statpacks)
+						var/datum/statpack/statpack = GLOB.statpacks[path]
+						if (!statpack.name)
+							continue
+						statpacks_available[statpack.name] = statpack
+
+					var/statpack_input = input(user, "Choose your character's statpack", "Statpack") as null|anything in statpacks_available
+					if (statpack_input)
+						var/datum/statpack/statpack_chosen = statpacks_available[statpack_input]
+						statpack = statpack_chosen
+						to_chat(user, "<font color='purple'>[statpack.name]</font>")
+						to_chat(user, "<font color='purple'>[statpack.description_string()]</font>")
+						// also, unset our virtue if we're not a virtuous statpack.
+						if (!istype(statpack, /datum/statpack/wildcard/virtuous) && virtue.type != /datum/virtue/none)
+							virtue = new /datum/virtue/none
+							to_chat(user, span_info("Your virtue has been removed due to taking a stat-altering statpack."))
+
 				if("faith")
 					var/list/faiths_named = list()
 					for(var/path as anything in GLOB.preference_faiths)
@@ -1523,9 +1547,9 @@ Slots: [job.spawn_positions]</span>
 					popup.open(FALSE)
 					return
 
-				if("view_nudeshot")
+				if("view_null")
 					var/list/dat = list("<img src='[nudeshot_link]' width='360px' height='480px'>")
-					var/datum/browser/popup = new(user, "nudeshot", "<div align='center'>Nudeshot</div>", 400, 525)
+					var/datum/browser/popup = new(user, "null", "<div align='center'>null</div>", 400, 525)
 					popup.set_content(dat.Join())
 					popup.open(FALSE)
 					return
@@ -1557,11 +1581,11 @@ Slots: [job.spawn_positions]</span>
 					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 					log_game("[user] has set their Headshot image to '[headshot_link]'.")
 
-				if("nudeshot")
+				if("null")
 					to_chat(user, "<span class='notice'>["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
 					to_chat(user, "<span class='notice'>Resolution: 360x480 pixels.</span>")
-					var/new_nudeshot_link = input(user, "Input the nudeshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Nudeshot", nudeshot_link) as text|null
+					var/new_nudeshot_link = input(user, "Input the null link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "null", nudeshot_link) as text|null
 					if(new_nudeshot_link == null)
 						return
 					if(new_nudeshot_link == "")
@@ -1573,8 +1597,8 @@ Slots: [job.spawn_positions]</span>
 						ShowChoices(user)
 						return
 					nudeshot_link = new_nudeshot_link
-					to_chat(user, "<span class='notice'>Successfully updated nudeshot picture</span>")
-					log_game("[user] has set their Nudeshot image to '[nudeshot_link]'.")
+					to_chat(user, "<span class='notice'>Successfully updated null picture</span>")
+					log_game("[user] has set their null image to '[nudeshot_link]'.")
 
 				if("species")
 
@@ -1596,6 +1620,24 @@ Slots: [job.spawn_positions]</span>
 
 				if("update_mutant_colors")
 					update_mutant_colors = !update_mutant_colors
+
+				if("virtue")
+					var/list/virtue_choices = list()
+					for (var/path as anything in GLOB.virtues)
+						var/datum/virtue/virtue = GLOB.virtues[path]
+						if (!virtue.name)
+							continue
+						virtue_choices[virtue.name] = virtue
+					var/result = input(user, "Select a virtue", "Roguetown") as null|anything in virtue_choices
+
+					if (result)
+						var/datum/virtue/virtue_chosen = virtue_choices[result]
+						virtue = virtue_chosen
+						if (virtue.desc)
+							to_chat(user, span_purple(virtue.desc))
+						if (statpack.type != /datum/statpack/wildcard/virtuous)
+							statpack = new /datum/statpack/wildcard/virtuous
+							to_chat(user, span_purple("Your statpack has been set to virtuous (no stats) due to selecting a virtue."))
 
 				if("charflaw")
 					var/list/coom = GLOB.character_flaws.Copy()

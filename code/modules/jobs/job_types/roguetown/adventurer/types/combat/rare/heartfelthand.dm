@@ -6,7 +6,6 @@
 	allowed_races = RACES_TOLERATED_UP
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfelthand
 	maximum_possible_slots = 1
-	pickprob = 100
 	traits_applied = list(TRAIT_HEAVYARMOR, TRAIT_SEEPRICES, TRAIT_NOBLE)
 	category_tags = list(CTAG_DISABLED)
 
@@ -39,8 +38,8 @@
 		H.change_stat("strength", 2)
 		H.change_stat("perception", 3)
 		H.change_stat("intelligence", 3)
-	
+
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-	
+

@@ -3,7 +3,6 @@
 	tutorial = "A warrior who has been blessed by Noc, because you trained to master both fields, then it has left you without much skill in both."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
-	pickprob = 25
 	maximum_possible_slots = 2
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	category_tags = list(CTAG_ADVENTURER)

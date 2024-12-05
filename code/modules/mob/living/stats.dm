@@ -1,4 +1,12 @@
 
+#define STAT_STRENGTH "strength"
+#define STAT_PERCEPTION "perception"
+#define STAT_INTELLIGENCE "intelligence"
+#define STAT_CONSTITUTION "constitution"
+#define STAT_ENDURANCE "endurance"
+#define STAT_SPEED "speed"
+#define STAT_FORTUNE "fortune"
+
 /mob/living
 	var/STASTR = 10
 	var/STAPER = 10
@@ -48,6 +56,8 @@
 		change_stat(S, how_much)
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
+		if (H.statpack)
+			H.statpack.apply_to_human(H)
 		if(H.dna.species)
 			// Species stats
 			for(var/S in H.dna.species.specstats)
@@ -89,6 +99,7 @@
 			set_eye_color(H, "#c71d76", "#c71d76")
 		if(isseelie(src))	//Check necessary to prevent seelie getting default stats when no other changes apply
 			change_stat("strength", -9)
+
 
 /mob/living/proc/change_stat(stat, amt, index)
 	if(!stat)

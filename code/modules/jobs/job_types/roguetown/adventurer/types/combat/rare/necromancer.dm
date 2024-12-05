@@ -4,7 +4,6 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/necromancer
-	pickprob = 30
 	traits_applied = list(TRAIT_ZOMBIE_IMMUNE)
 	category_tags = list(CTAG_DISABLED)
 
@@ -24,7 +23,7 @@
 	beltl = /obj/item/rogueweapon/huntingknife
 	r_hand = /obj/item/rogueweapon/woodstaff
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)	
+	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", 3)
 	H.change_stat("constitution", -2)

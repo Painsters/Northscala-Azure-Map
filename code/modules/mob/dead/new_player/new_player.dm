@@ -166,7 +166,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 			if(ready != tready)
 				ready = tready
 				if(ready && client && client.prefs.defiant)
-					to_chat(src, span_userdanger("Remember : Defiant ERP protection is only enabled while COMBAT mode is active. AHELP if necessary."))
+					to_chat(src, span_userdanger("Remember : Defiant protection is only enabled while COMBAT mode is active. AHELP if necessary."))
 		//if it's post initialisation and they're trying to observe we do the needful
 		if(!SSticker.current_state < GAME_STATE_PREGAME && tready == PLAYER_READY_TO_OBSERVE)
 			ready = tready
