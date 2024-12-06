@@ -8,19 +8,19 @@
 	allowed_patrons = ALL_NON_INHUMEN_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_VERY_SHUNNED_UP
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "An experienced soldier of the Duke's retinue, you have been tasked with overseeing the newly constructed Bastion. \
 				You report to the Royal Marshal and their Councillors, \
 				and your job is to keep the vanguard in line and to ensure the routes to the town are safe.\
 				The Bastion must not fall."
 	display_order = JDO_BOGMASTER
-	whitelist_req = FALSE
+	whitelist_req = TRUE
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/bog)
 	outfit = /datum/outfit/job/roguetown/bogmaster
 
 	give_bank_account = 35
-	min_pq = 0
+	min_pq = 8
 	max_pq = null
 	cmode_music = 'sound/music/combat_bog.ogg'
 
@@ -50,7 +50,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/armor
 	beltl = /obj/item/storage/keyring/bog_master
 	beltr = /obj/item/rogueweapon/sword
-	belt = /obj/item/storage/belt/rogue/leather/
+	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/shield/tower
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, , /obj/item/signal_horn = 1)

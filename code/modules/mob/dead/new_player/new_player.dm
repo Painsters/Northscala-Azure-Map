@@ -315,7 +315,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to play this round!","Player Setup","Yes","No")
+	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? Playing is a lot more fun.","VOYEUR","Yes","No")
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
 		ready = PLAYER_NOT_READY
@@ -327,7 +327,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	if(check_rights(R_WATCH, FALSE))
 		observer = new /mob/dead/observer/admin(src)
 	else
-		observer = new /mob/dead/observer/rogue(src)
+		observer = new /mob/dead/observer/rogue/nodraw(src)
 	spawning = TRUE
 
 	observer.started_as_observer = TRUE

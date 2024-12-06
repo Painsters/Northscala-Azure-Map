@@ -127,7 +127,7 @@
 /mob/living/carbon/spirit/returntolobby()
 	set name = "{RETURN TO LOBBY}"
 	set category = "Options"
-	set hidden = 1
+	set hidden = 0
 
 	if(key)
 		GLOB.respawntimes[key] = world.time

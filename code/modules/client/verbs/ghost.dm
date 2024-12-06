@@ -31,7 +31,7 @@ GLOBAL_LIST_INIT(ghost_verbs, list(
 		if("Yes")
 			try_descend()
 		if("No")
-			usr << "You have second thoughts."	
+			usr << "You have second thoughts."
 
 /client/proc/try_descend()
 	if(istype(mob, /mob/living/carbon/spirit))
@@ -84,8 +84,8 @@ GLOBAL_LIST_INIT(ghost_verbs, list(
 /mob/verb/returntolobby()
 	set name = "{RETURN TO LOBBY}"
 	set category = "Options"
-	set hidden = 1
-	
+	set hidden = 0
+
 	if(key)
 		GLOB.respawntimes[key] = world.time
 

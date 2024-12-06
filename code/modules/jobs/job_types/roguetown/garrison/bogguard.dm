@@ -13,10 +13,10 @@
 	You have a roof over your head, coin in your pocket, and a thankless job protecting the outskirts of town against what lurks beyond.\
 	The Bastion must not fall."
 	display_order = JDO_TOWNGUARD
-	whitelist_req = FALSE
+	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/bog
 	give_bank_account = 16
-	min_pq = 0
+	min_pq = 1
 	max_pq = null
 	advclass_cat_rolls = list(CTAG_BOG = 20)
 	advjob_examine = TRUE
@@ -80,7 +80,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/armor
 	beltl = /obj/item/storage/keyring/bog_guard
-	belt = /obj/item/storage/belt/rogue/leather/
+	belt = /obj/item/storage/belt/rogue/leather
 
 /datum/outfit/job/roguetown/ranger/pre_equip(mob/living/carbon/human/H)
 	. = ..()
