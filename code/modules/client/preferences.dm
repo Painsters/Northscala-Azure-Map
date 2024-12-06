@@ -146,6 +146,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/family = FAMILY_NONE
 
 	var/crt = FALSE
+	var/grain = TRUE
 
 	var/list/customizer_entries = list()
 	var/list/list/body_markings = list()

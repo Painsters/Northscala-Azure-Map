@@ -8,16 +8,16 @@
 	selection_color = JCOLOR_SOLDIER
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_TOLERATED_UP
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "Responsible for the safety of the city and the enforcement of the law, \
 	you walk among the downtrodden, delivering justice and pain. \
 	Bound to the commands of many lords, both the Church and the Sheriff hold great sway over your life."
 	display_order = JDO_TOWNGUARD
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/citywatch
 	give_bank_account = 16
-	min_pq = 1
+	min_pq = 0
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard.ogg'

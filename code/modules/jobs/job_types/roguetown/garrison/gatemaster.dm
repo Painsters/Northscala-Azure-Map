@@ -16,9 +16,9 @@
 
 	outfit = /datum/outfit/job/roguetown/gatemaster
 	give_bank_account = 3
-	min_pq = 4
+	min_pq = 0
 	max_pq = null
-	
+
 	cmode_music = 'sound/music/combat_guard2.ogg'
 
 /datum/job/roguetown/gatemaster/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
@@ -68,7 +68,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE) 
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("perception", 2)

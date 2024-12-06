@@ -7,7 +7,7 @@
 	spawn_positions = 1
 	allowed_sexes = list(MALE)
 	allowed_races = RACES_TOLERATED_UP
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	display_order = JDO_MARSHAL
 	tutorial = "You and your Councillors are the judge and jury, only overruled by His Majesty. \
 				Plan with the Councillors on any issues, laws, judgements, and construction that are required to adapt to the new world. \
@@ -22,7 +22,7 @@
 	outfit = /datum/outfit/job/roguetown/marshal
 
 	give_bank_account = 40
-	min_pq = 4
+	min_pq = 0
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard.ogg'
@@ -127,7 +127,7 @@
 				INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(lord_outlaw_requested), src, lord, inputty)
 			else
 				make_outlaw(inputty)
-				
+
 /proc/find_lord(required_stat = CONSCIOUS)
 	var/mob/living/lord
 	for(var/mob/living/carbon/human/H in GLOB.human_list)

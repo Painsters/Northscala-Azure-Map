@@ -11,7 +11,7 @@
 
 	outfit = /datum/outfit/job/roguetown/architect
 	display_order = JDO_ARCHITECT
-	min_pq = 12
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/architect/pre_equip(mob/living/carbon/human/H)         ///////////// fuck being a dumb virgin

@@ -4,6 +4,7 @@
 	pressure_resistance = 15
 	base_intents = list(INTENT_HELP, INTENT_HARM)
 	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,GLAND_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD)
+	var/obj/item/internal_storage //what we're storing within ourself
 	has_limbs = 1
 	held_items = list(null, null)
 	///List of /obj/item/organ in the mob. They don't go in the contents for some reason I don't want to know.
@@ -38,17 +39,17 @@
 	///only used by humans.
 	var/obj/item/clothing/shoes = null
 	///only used by humans.
-	var/obj/item/clothing/glasses/glasses = null 
+	var/obj/item/clothing/glasses/glasses = null
 	///only used by humans.
 	var/obj/item/clothing/ears = null
 
 
 	var/datum/dna/dna = null //Carbon
 	///last mind to control this mob, for blood-based cloning
-	var/datum/mind/last_mind = null 
+	var/datum/mind/last_mind = null
 
 	///This is used to determine if the mob failed a breath. If they did fail a brath, they will attempt to breathe each tick, otherwise just once per 4 ticks.
-	var/failed_last_breath = 0 
+	var/failed_last_breath = 0
 
 	var/co2overloadtime = null
 	var/temperature_resistance = T0C+75

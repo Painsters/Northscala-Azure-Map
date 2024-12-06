@@ -361,6 +361,41 @@
 	var/river_processing
 	swimdir = TRUE
 
+/turf/open/water/ocean
+	name = "salt water"
+	desc = "The waves lap at the coast, hungry to swallow the land. Doesn't look too deep."
+	icon_state = "ash"
+	icon = 'icons/turf/roguefloor.dmi'
+	water_level = 2
+	water_color = "#3e7459"
+	slowdown = 4
+	swim_skill = TRUE
+	wash_in = TRUE
+	water_reagent = /datum/reagent/water/gross
+
+/turf/open/water/ocean/deep
+	name = "salt water"
+	desc = "Deceptively deep, be careful not to find yourself this far out."
+	icon_state = "water"
+	icon = 'icons/turf/roguefloor.dmi'
+	water_level = 3
+	water_color = "#3e7459"
+	slowdown = 8
+	swim_skill = TRUE
+	wash_in = FALSE
+
+/turf/open/water/pond
+	name = "pond"
+	desc = "Still and idyllic water that flows through meadows."
+	icon_state = "pond"
+	icon = 'icons/turf/roguefloor.dmi'
+	water_level = 3
+	slowdown = 3
+	swim_skill = TRUE
+	wash_in = TRUE
+	water_reagent = /datum/reagent/water
+
+
 /turf/open/water/river/update_icon()
 	if(water_overlay)
 		water_overlay.color = water_color

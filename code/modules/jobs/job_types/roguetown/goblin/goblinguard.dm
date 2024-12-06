@@ -12,7 +12,7 @@
 	'Tend' to captives when possible, instead of outright killing them."
 	display_order = JDO_GOBLINGUARD
 	outfit = /datum/outfit/job/roguetown/goblinguard
-	min_pq = 4
+	min_pq = 0
 	max_pq = null
 	advclass_cat_rolls = list(CTAG_GOBS = 20)
 	advjob_examine = TRUE

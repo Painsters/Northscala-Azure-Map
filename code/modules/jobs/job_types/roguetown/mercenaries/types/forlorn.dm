@@ -5,7 +5,7 @@
 	allowed_races = list(/datum/species/lupian, /datum/species/vulpkanin)
 	outfit = /datum/outfit/job/roguetown/mercenary/forlorn
 	maximum_possible_slots = 10
-	min_pq = 4
+	min_pq = 0
 	torch = FALSE
 	cmode_music = 'sound/music/combat_forlorn.ogg'
 	category_tags = list(CTAG_MERCENARY)

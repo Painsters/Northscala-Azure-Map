@@ -14,7 +14,7 @@
 	Assure he has all he needs to succeed, and, should he fail, take his place."
 	outfit = /datum/outfit/job/roguetown/goblinshaman
 	display_order = JDO_GOBLINSHAMAN
-	min_pq = 5
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/goblinshaman

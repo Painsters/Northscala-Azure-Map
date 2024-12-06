@@ -15,10 +15,10 @@
 		Out of desperation, you followed the ways of Pestra and managed to be cured. \
 		Now you serve in the Duke's court ensuring the good health of those inhabiting the keep."
 	outfit = /datum/outfit/job/roguetown/physician
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 
 	give_bank_account = 25
-	min_pq = 2
+	min_pq = 0
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_physician.ogg'

@@ -12,7 +12,7 @@
 	Maintain a farm, task the lower-goblins with foraging and try not to cook anything that'll kill your Chief."
 	outfit = /datum/outfit/job/roguetown/goblincook
 	display_order = JDO_GOBLINCOOK
-	min_pq = 2
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/goblincook

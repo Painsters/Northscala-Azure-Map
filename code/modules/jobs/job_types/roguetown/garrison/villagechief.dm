@@ -8,12 +8,12 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
-	allowed_ages = list(AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "You are as venerable and ancient as the trees themselves, wise even for your years spent in the vanguard. The Duke may lead officially, but people look to you as Ealdorman to solve lesser issues. Remember the old ways of the law, not everything must end in bloodshed."
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/woodsman
 	display_order = JDO_CHIEF
-	min_pq = 5
+	min_pq = 0
 	max_pq = null
 	give_bank_account = 16
 

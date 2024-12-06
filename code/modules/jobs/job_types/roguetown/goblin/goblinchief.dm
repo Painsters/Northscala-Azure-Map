@@ -14,7 +14,7 @@
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/goblinchief
 	display_order = JDO_GOBLINCHIEF
-	min_pq = 6
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/goblinchief

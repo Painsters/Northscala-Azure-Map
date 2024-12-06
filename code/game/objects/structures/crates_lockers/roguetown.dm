@@ -127,3 +127,39 @@
 	base_icon_state = "drawer5"
 	dir = SOUTH
 	pixel_y = 16
+
+//Stonekeep port
+/obj/structure/closet/crate/chest/crate
+	name = "crate"
+	base_icon_state = "woodchest"
+	icon_state = "woodchest"
+
+/obj/structure/closet/crate/chest/wicker
+	name = "wicker basket"
+	desc = "Fibers interwoven to make a cheap storage bin."
+	base_icon_state = "wicker"
+	icon_state = "wicker"
+	open_sound = 'sound/items/book_open.ogg'
+	open_sound = 'sound/items/book_close.ogg'
+	close_sound = 'sound/items/book_close.ogg'
+
+/obj/structure/closet/crate/chest/neu
+	name = "sturdy oak chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
+
+/obj/structure/closet/crate/chest/neu_iron
+	name = "reinforced chest"
+	icon_state = "chestiron_neu"
+	base_icon_state = "chestiron_neu"
+
+/obj/structure/closet/crate/chest/neu_fancy
+	name = "fancy chest"
+	icon_state = "chestfancy_neu"
+	base_icon_state = "chestfancy_neu"
+
+/obj/structure/closet/crate/chest/old_crate
+	name = "old crate"
+	base_icon_state = "woodchestalt"
+	icon_state = "woodchestalt"
+

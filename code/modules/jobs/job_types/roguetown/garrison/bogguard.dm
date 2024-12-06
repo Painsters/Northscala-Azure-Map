@@ -13,10 +13,10 @@
 	You have a roof over your head, coin in your pocket, and a thankless job protecting the outskirts of town against what lurks beyond.\
 	The Bastion must not fall."
 	display_order = JDO_TOWNGUARD
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/bog
 	give_bank_account = 16
-	min_pq = 1
+	min_pq = 0
 	max_pq = null
 	advclass_cat_rolls = list(CTAG_BOG = 20)
 	advjob_examine = TRUE

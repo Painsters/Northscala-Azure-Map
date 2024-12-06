@@ -3,6 +3,8 @@
 Psydon
 SystemCheck
 RogueRay
+Pongosiant
+
 ##################################
 ## ACTUAL PATREON BELOW
 ####################################

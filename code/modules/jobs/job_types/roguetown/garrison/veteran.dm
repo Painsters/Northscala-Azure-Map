@@ -14,13 +14,13 @@
 	You don't sleep well at night anymore, you don't like remembering what you've had to do to survive. \
 	Trading adventure for stable pay was the only logical solution, and maybe someday you'll get to lay down the blade..."
 
-	allowed_ages = list(AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	display_order = JDO_VET
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 35
-	min_pq = 5
+	min_pq = 0
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard.ogg'

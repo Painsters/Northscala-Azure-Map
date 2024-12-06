@@ -9,7 +9,7 @@
 
 	allowed_races = RACES_TOLERATED_UP
 	allowed_sexes = list(MALE)
-	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "You served your time gracefully as a soldier, and now you've grown into a role which many men dream to become. \
 				You are the Marshal's chosen, elevated to command His Highness' personal retinue. \
 				Keep your men in line, as for this realm to prosper, the duke must be safe. \
@@ -21,7 +21,7 @@
 	outfit = /datum/outfit/job/roguetown/captain
 
 	give_bank_account = 26
-	min_pq = 8
+	min_pq = 0
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard2.ogg'

@@ -5,7 +5,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	allowed_races = RACES_TOLERATED_UP
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_COUNCILLOR
@@ -15,9 +15,9 @@
 			You only answer to the Duke, Marshal, Duchess, Heir, or Heiress. However, your main focus is to assist the Marshal with their duties."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/councillor
-	
+
 	give_bank_account = 40
-	min_pq = 2
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/councillor/pre_equip(mob/living/carbon/human/H)
@@ -41,6 +41,6 @@
 		H.change_stat("intelligence", 3)
 		H.change_stat("constitution", 1)
 		H.change_stat("fortune", 2)
-	
+
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 

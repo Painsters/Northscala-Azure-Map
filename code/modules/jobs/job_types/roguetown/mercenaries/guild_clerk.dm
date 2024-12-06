@@ -15,7 +15,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	min_pq = 6
+	min_pq = 0
 	max_pq = null
 	job_reopens_slots_on_death = TRUE
 

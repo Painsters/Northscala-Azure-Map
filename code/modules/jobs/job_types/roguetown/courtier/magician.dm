@@ -15,9 +15,9 @@
 		You owe your life to the Lord, for it was his coin that allowed you to continue your studies in these dark times. \
 		In return, you have proven time and time again as justicar and trusted advisor to their reign."
 	outfit = /datum/outfit/job/roguetown/magician
-	whitelist_req = TRUE
+	whitelist_req = FALSE
 	give_bank_account = 47
-	min_pq = 2
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/magician
@@ -60,7 +60,7 @@
 			H.change_stat("speed", -1)
 			H.change_stat("intelligence", 1)
 			H.change_stat("perception", 1)
-		
+
 		if(H.gender == MALE)
 			H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
 

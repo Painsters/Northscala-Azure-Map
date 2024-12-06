@@ -10,7 +10,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/newmoon
 	maximum_possible_slots = 10
-	min_pq = 4
+	min_pq = 0
 	torch = FALSE
 	cmode_music = 'sound/music/combat_desertrider.ogg'
 	category_tags = list(CTAG_MERCENARY)

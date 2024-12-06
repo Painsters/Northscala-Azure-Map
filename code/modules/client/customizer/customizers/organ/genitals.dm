@@ -1,6 +1,6 @@
 /datum/customizer/organ/penis
 	abstract_type = /datum/customizer/organ/penis
-	name = "Penis"
+	name = "Disabled"
 	allows_disabling = TRUE
 	default_disabled = TRUE
 
@@ -9,7 +9,7 @@
 
 /datum/customizer_choice/organ/penis
 	abstract_type = /datum/customizer_choice/organ/penis
-	name = "Penis"
+	name = "Disabled"
 	organ_type = /obj/item/organ/penis
 	organ_slot = ORGAN_SLOT_PENIS
 	organ_dna_type = /datum/organ_dna/penis
@@ -167,7 +167,7 @@
 
 /datum/customizer/organ/testicles
 	abstract_type = /datum/customizer/organ/testicles
-	name = "Testicles"
+	name = "Disabled"
 	allows_disabling = TRUE
 	default_disabled = TRUE
 
@@ -176,7 +176,7 @@
 
 /datum/customizer_choice/organ/testicles
 	abstract_type = /datum/customizer_choice/organ/testicles
-	name = "Testicles"
+	name = "Disabled"
 	organ_type = /obj/item/organ/testicles
 	organ_dna_type = /datum/organ_dna/testicles
 	customizer_entry_type = /datum/customizer_entry/organ/testicles
@@ -229,16 +229,16 @@
 	)
 
 /datum/customizer_choice/organ/testicles/external
-	name = "Testicles"
+	name = "Disabled"
 	sprite_accessories = list(/datum/sprite_accessory/testicles/pair)
 
 /datum/customizer_choice/organ/testicles/human
-	name = "Testicles"
+	name = "Disabled"
 	sprite_accessories = list(/datum/sprite_accessory/testicles/pair)
 	allows_accessory_color_customization = FALSE
 
 /datum/customizer_choice/organ/testicles/internal
-	name = "Internal testicles"
+	name = "Disabled"
 	organ_type = /obj/item/organ/testicles/internal
 	sprite_accessories = null
 	can_customize_size = FALSE
@@ -248,7 +248,7 @@
 
 /datum/customizer/organ/breasts
 	abstract_type = /datum/customizer/organ/breasts
-	name = "Breasts"
+	name = "Disabled"
 	allows_disabling = TRUE
 	default_disabled = TRUE
 
@@ -257,7 +257,7 @@
 
 /datum/customizer_choice/organ/breasts
 	abstract_type = /datum/customizer_choice/organ/breasts
-	name = "Breasts"
+	name = "Disabled"
 	customizer_entry_type = /datum/customizer_entry/organ/breasts
 	organ_type = /obj/item/organ/breasts
 	organ_slot = ORGAN_SLOT_BREASTS
@@ -312,7 +312,7 @@
 
 /datum/customizer/organ/vagina
 	abstract_type = /datum/customizer/organ/vagina
-	name = "Vagina"
+	name = "Disabled"
 	allows_disabling = TRUE
 	default_disabled = TRUE
 
@@ -321,7 +321,7 @@
 
 /datum/customizer_choice/organ/vagina
 	abstract_type = /datum/customizer_choice/organ/vagina
-	name = "Vagina"
+	name = "Disabled"
 	organ_type = /obj/item/organ/vagina
 	organ_slot = ORGAN_SLOT_VAGINA
 
