@@ -9,6 +9,7 @@
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
 #include "_maps\conflict_marker.dm"
+#include "_maps\dun_manor.dm"
 #include "_maps\templates\bog_shack_small.dm"
 #include "_maps\templates\sewers.dm"
 #include "_maps\templates\smalldungeons.dm"
@@ -1564,6 +1565,7 @@
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\elf\elfs.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\goblin\goblinp.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\human\_human.dm"
+#include "code\modules\mob\living\carbon\human\species_types\roguetown\human\blank.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\human\humen.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\other\aasimar.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\other\halfelf.dm"

@@ -15,6 +15,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientsounds = null
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 //	var/previous_ambient = ""
+	var/town_area = FALSE
+	var/keep_area = FALSE
+	var/warden_area = FALSE
 
 /area/rogue/indoors
 	name = "indoors rt"
@@ -228,6 +231,28 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
+/area/rogue/outdoors/beach/forest
+	name = "coastforest"
+	icon_state = "beach"
+	icon_state = "woods"
+	ambientsounds = AMB_FORESTDAY
+	ambientnight = AMB_FORESTNIGHT
+	spookysounds = SPOOKY_CROWS
+	spookynight = SPOOKY_FOREST
+	droning_sound = 'sound/music/area/forest.ogg'
+	droning_sound_dusk = 'sound/music/area/septimus.ogg'
+	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	soundenv = 15
+	ambush_times = list("night","dusk")
+	ambush_types = list(
+				/turf/open/floor/rogue/dirt,
+				/turf/open/floor/rogue/grass)
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 30,
+				/mob/living/carbon/human/species/goblin/npc/ambush/sea = 40)
+	first_time_text = "THE AZURE COAST"
+	converted_type = /area/rogue/indoors/shelter/woods
+
 
 //// UNDER AREAS (no indoor rain sound usually)
 
@@ -375,6 +400,43 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/dungeon.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+/area/rogue/under/cave/mazedungeon
+	name = "mazedungeon"
+	icon_state = "under"
+	first_time_text = "TEMPLE OF THE SHATTERED GOD"
+	droning_sound = 'sound/music/area/dungeon.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/rogue/outdoors/dungeon1
+/area/rogue/under/cave/orcdungeon
+	name = "orcdungeon"
+	icon_state = "under"
+	first_time_text = "OLD RUIN"
+	droning_sound = 'sound/music/area/dungeon.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/rogue/outdoors/dungeon1
+/area/rogue/under/cave/dukecourt
+	name = "dukedungeon"
+	icon_state = "duke"
+	first_time_text = "FORGOTTEN COURT"
+	droning_sound = 'sound/music/area/dungeon.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	converted_type = /area/rogue/outdoors/dungeon1
+/area/rogue/under/cave/dungeon1/gethsmane
+	name = "golgothaentry"
+	first_time_text = "THE SPILLWAY"
+	droning_sound = 'sound/music/area/dungeon.ogg'
+	icon_state = "spider"
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/under/cave/dungeon1/gethsmane/inner
+	name = "golgothaentry"
+	first_time_text = "GETHSMANE"
+	droning_sound = 'sound/music/area/dungeon.ogg'
+	icon_state = "spider"
 
 //////
 /////
@@ -397,6 +459,13 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
+
+/area/rogue/outdoors/exposed/town/keep
+	name = "Keep"
+	icon_state = "manor"
+	droning_sound = 'sound/music/area/manorgarri.ogg'
+	keep_area = TRUE
+	town_area = TRUE
 
 /area/rogue/indoors/town/manor
 	name = "Manor"
@@ -682,6 +751,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/catacombs.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+
+/area/rogue/under/town/basement/keep
+	name = "keep basement"
+	icon_state = "basement"
+	keep_area = TRUE
+	town_area = TRUE
 
 //Not really a town area, but whatever.
 /area/rogue/under/town/goblin

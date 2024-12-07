@@ -124,9 +124,6 @@
 /obj/structure/glowshroom,
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods)
-"aQ" = (
-/turf/closed/indestructible/riveted/boss,
-/area/rogue/outdoors/woods)
 "aR" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mole,
 /turf/open/floor/rogue/dirt,
@@ -14586,11 +14583,11 @@ Lg
 Lg
 Lg
 Bm
-aQ
-aQ
-aQ
-aQ
-aQ
+My
+sN
+My
+My
+My
 hb
 sN
 sN
@@ -14720,7 +14717,7 @@ My
 My
 UJ
 My
-aQ
+sN
 hb
 sN
 sN
@@ -14847,7 +14844,7 @@ Lg
 Lg
 Bm
 My
-My
+sN
 My
 My
 My
@@ -14977,7 +14974,7 @@ Lg
 Lg
 Bm
 My
-My
+sN
 My
 My
 My
@@ -15110,7 +15107,7 @@ My
 My
 UJ
 My
-aQ
+sN
 ao
 Lg
 sN
@@ -15236,11 +15233,11 @@ Lg
 Lg
 Lg
 Bm
-aQ
-aQ
-aQ
-aQ
-aQ
+sN
+My
+My
+sN
+My
 ao
 Lg
 sN
