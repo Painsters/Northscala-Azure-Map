@@ -10,13 +10,15 @@
 	allowed_patrons = list(
 		/datum/patron/psydon
 	)
-	tutorial = "Created with the re-emergence of the cult of Psydon, The Inquisition has sent you to Rockhill on a quest to root out the blasphemous and the accursed of these lands. Guided by religious fervor and paranoia, you hope that your uneasy alliance with the Church will hold."
-	whitelist_req = FALSE
+	tutorial = "Created with the re-emergence of the cult of Psydon, \
+	The Inquisition has sent you to Rockhill on a quest to root out the blasphemous and the accursed of these lands. \
+	Guided by religious fervor and paranoia, you hope that your uneasy alliance with the Church will hold."
+	whitelist_req = TRUE
 
 	outfit = /datum/outfit/job/roguetown/puritan
 	display_order = JDO_PURITAN
 	give_bank_account = 200
-	min_pq = 0
+	min_pq = 5
 	max_pq = null
 
 /datum/outfit/job/roguetown/puritan
