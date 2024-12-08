@@ -59,6 +59,10 @@
 /obj/machinery/light/rogue/oven/Crossed(atom/movable/AM, oldLoc)
 	return
 
+/obj/machinery/light/rogue/oven/north
+	dir = NORTH
+	pixel_y = -32
+
 /obj/machinery/light/rogue/oven/south
 	dir = SOUTH
 	pixel_y = 32 //so we see it in mapper

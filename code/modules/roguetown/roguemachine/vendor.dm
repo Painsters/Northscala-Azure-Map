@@ -48,7 +48,7 @@
 		else
 			if(!locked)
 				insert(P, user)
-			else	
+			else
 				to_chat(user, span_warning("Wrong key."))
 				return
 	if(istype(P, /obj/item/storage/keyring))
@@ -261,6 +261,9 @@
 
 /obj/structure/roguemachine/vendor/inn
 	lockid = "tavern"
+
+/obj/structure/roguemachine/vendor/bathhouse
+	lockid = "nightman"
 
 /obj/structure/roguemachine/vendor/inn/Initialize()
 	. = ..()
