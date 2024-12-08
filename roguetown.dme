@@ -1970,5 +1970,7 @@
 #include "modular_azurepeak\virtues\size.dm"
 #include "modular_azurepeak\virtues\thief.dm"
 #include "modular_azurepeak\virtues\utility.dm"
+#include "modular_hearthstone\code\game\objects\structures\canopy.dm"
+#include "modular_hearthstone\code\game\objects\structures\hangingbanners.dm"
 #include "modular_hearthstone\code\interface\LOOC.dm"
 // END_INCLUDE
