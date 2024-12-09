@@ -24,6 +24,43 @@
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 
+/obj/item/clothing/gloves/roguetown/fingerless_leather
+	name = "fingerless leather gloves"
+	desc = "A pair of protective gloves favored by lockshimmers, laborers, and smokers for maintaining \
+	manual dexterity over regular gloves."
+	icon_state = "roguegloves"
+	armor = list("blunt" = 50, "slash" = 25, "stab" = 40, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)
+	resistance_flags = FIRE_PROOF
+	blocksound = SOFTHIT
+	max_integrity = 200
+	blade_dulling = DULLING_BASHCHOP
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
+	anvilrepair = null
+	sewrepair = TRUE
+
+/obj/item/clothing/gloves/roguetown/angle
+	name = "heavy leather gloves"
+	desc = ""
+	icon_state = "angle"
+	armor = list("blunt" = 50, "slash" = 25, "stab" = 40, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)
+	resistance_flags = FIRE_PROOF
+	blocksound = SOFTHIT
+	max_integrity = 200
+	blade_dulling = DULLING_BASHCHOP
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
+	anvilrepair = null
+	sewrepair = TRUE
+
+/obj/item/clothing/gloves/roguetown/fingerless/shadowgloves
+	name = "fingerless gloves"
+	desc = "Cloth gloves to absorb palm sweat while leaving the fingers free for fine manipulation."
+	icon_state = "shadowgloves"
+	allowed_race = NON_DWARVEN_RACE_TYPES
+
 /obj/item/clothing/gloves/roguetown/chain
 	name = "chain gauntlets"
 	desc = "Gauntlets made with interlinking rings, provides adequate protection against slashing attacks."
@@ -40,6 +77,11 @@
 	smeltresult = /obj/item/ingot/steel
 	resistance_flags = FIRE_PROOF
 	sewrepair = FALSE
+
+/obj/item/clothing/gloves/roguetown/chain/psydon
+	name = "otavan chain gauntlets"
+	icon_state = "psydongloveschain"
+	item_state = "psydongloveschains"
 
 /obj/item/clothing/gloves/roguetown/chain/iron
 	icon_state = "icgloves"
@@ -76,7 +118,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	
+
 	//---------------- BLACKSTEEL ---------------------
 
 /obj/item/clothing/gloves/roguetown/blacksteel/plategloves

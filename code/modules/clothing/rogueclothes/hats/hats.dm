@@ -51,7 +51,7 @@
 
 /obj/item/clothing/head/roguetown/roguehood/reinforced/newmoon
 	color = "#78a3c9"
-	
+
 
 /obj/item/clothing/head/roguetown/roguehood/shalal
 	name = "keffiyeh"
@@ -511,6 +511,16 @@
 	flags_inv = HIDEEARS
 	body_parts_covered = HEAD|HAIR
 
+/obj/item/clothing/head/roguetown/helmet/psydonbarbute
+	name = "psydonian barbute"
+	desc = "A barbute styled with Psydonian Imagery."
+	icon_state = "psydonbarbute"
+	item_state = "psydonbarbute"
+	block2add = FOV_BEHIND
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	body_parts_covered = FULL_HEAD
+
 //................ CULTIST HOOD ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/cult_hood
 	name = "cultist hood"
@@ -571,7 +581,7 @@
 	icon_state = "volfplate"
 	item_state = "volfplate"
 	adjustable = CAN_CADJUST
-	max_integrity = 300 
+	max_integrity = 300
 	emote_environment = 3
 	armor_class = ARMOR_CLASS_MEDIUM
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
@@ -716,6 +726,18 @@
 					var/mob/living/carbon/H = user
 					H.update_inv_head()
 		user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/helmet/heavy/frogmouth
+	name = "froggemund helmet"
+	desc = "A tall and imposing frogmouth-style helm popular in the highest plateaus of the Azure Peak. Covers not just the head, but the neck as well. Add a cloth to show the colors of your family or allegiance."
+	icon_state = "frogmouth"
+	item_state = "frogmouth"
+	emote_environment = 3
+	body_parts_covered = FULL_HEAD|NECK
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_RIGHT|FOV_LEFT
+	max_integrity = 450
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/bascinet
 	name = "bascinet"

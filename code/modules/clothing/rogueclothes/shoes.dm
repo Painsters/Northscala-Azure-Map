@@ -13,6 +13,17 @@
 	w_class = WEIGHT_CLASS_SMALL
 	sewrepair = TRUE
 
+/obj/item/clothing/shoes/roguetown/boots
+	name = "dark boots"
+	//dropshrink = 0.75
+	color = "#d5c2aa"
+	desc = ""
+	gender = PLURAL
+	icon_state = "blackboots"
+	item_state = "blackboots"
+	sewrepair = TRUE
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
 	color = "#d5c2aa"
@@ -72,6 +83,13 @@
 	resistance_flags = null
 	color = "#cbcac9"
 
+/obj/item/clothing/shoes/roguetown/psydonboots
+	name = "enduring boots"
+	desc = "A reliable pair of dark leather boots. Seems like they could endure the world!"
+	color = "#d5c2aa"
+	icon_state = "psydonboots"
+	item_state = "psydonboots"
+
 
 // **ARMOURED** //
 
@@ -85,6 +103,20 @@
 	blocksound = SOFTHIT //This hit sound is for leather
 	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST) //These match leather helmets
 	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/boots/armor/iron
+	name = "iron plated boots"
+	desc = "Boots with iron for added protection."
+	body_parts_covered = FEET
+	icon_state = "armorironboots"
+	item_state = "armorironboots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	max_integrity = 200
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/blacksmithing
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/shoes/roguetown/armor/steel
 	name = "steel plated boots"
@@ -103,7 +135,7 @@
 	// ----------------- BLACKSTEEL -----------------------
 
 /obj/item/clothing/shoes/roguetown/boots/blacksteel/plateboots
-	name = "Blacksteel Plate Boots"	
+	name = "Blacksteel Plate Boots"
 	desc = "Boots forged of durable blacksteel."
 	body_parts_covered = FEET
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'

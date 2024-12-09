@@ -1,4 +1,4 @@
-/obj/item/clothing/cloak
+	/obj/item/clothing/cloak
 	name = "cloak"
 	icon = 'icons/roguetown/clothing/cloaks.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -28,6 +28,56 @@
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
 	flags_inv = HIDECROTCH|HIDEBOOB
 	var/picked
+
+/obj/item/clothing/cloak/psydontabard
+	name = "inquisitorial tabard"
+	desc = "A long vest bearing Psydonian symbology"
+	color = null
+	icon_state = "psydontabard"
+	item_state = "psydontabard"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+	var/open_wear = FALSE
+
+/obj/item/clothing/cloak/psydontabard/alt
+	name = "open otavan tabard"
+	desc = "A long vest bearing Psydonian symbology"
+	body_parts_covered = GROIN
+	icon_state = "psydontabardalt"
+	item_state = "psydontabardalt"
+	flags_inv = HIDECROTCH
+	open_wear = TRUE
+
+/obj/item/clothing/cloak/psydontabard/attack_right(mob/user)
+	switch(open_wear)
+		if(FALSE)
+			name = "inquisitorial tabard"
+			desc = "A long vest bearing Psydonian symbology"
+			body_parts_covered = GROIN
+			icon_state = "psydontabardalt"
+			item_state = "psydontabardalt"
+			open_wear = TRUE
+			flags_inv = HIDECROTCH // BARE YOUR CHEST, NOT YOUR WEEN!
+			to_chat(usr, span_warning("Now wearing ENDURINGLY!"))
+		if(TRUE)
+			name = "inquisitorial tabard"
+			desc = "A long vest bearing Psydonian symbology"
+			body_parts_covered = CHEST|GROIN
+			icon_state = "psydontabard"
+			item_state = "psydontabard"
+			flags_inv = HIDECROTCH|HIDEBOOB
+			open_wear = FALSE
+			to_chat(usr, span_warning("Now wearing normally!"))
+	update_icon()
+	if(user)
+		if(ishuman(user))
+			var/mob/living/carbon/H = user
+			H.update_inv_cloak()
+			H.update_inv_armor()
 
 /obj/item/clothing/cloak/tabard/update_icon()
 	cut_overlays()
@@ -173,6 +223,10 @@
 	name = "surcoat of the lunar order"
 	icon_state = "tabard_noc"
 	item_state = "tabard_noc"
+
+/obj/item/clothing/cloak/tabard/crusader/psydon
+	color = CLOTHING_BLACK
+	detail_color = CLOTHING_WHITE
 
 /obj/item/clothing/cloak/tabard/crusader/noc/alt
 	icon_state = "tabard_noc_alt"
@@ -1209,6 +1263,20 @@
 	name = "malummite tabard"
 	desc = "Light blacks and greys, with a tinge of red, the everlasting fire of Malum's iron hammer as it strikes."
 	icon_state = "malumtabard"
+
+/obj/item/clothing/cloak/templar/psydon
+	name = "psydon tabard"
+	desc = "An outer garment commonly worn by soldiers. This one has the symbol of Psydon on it."
+	icon_state = "tabard_weeping"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/necran
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'

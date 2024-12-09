@@ -279,3 +279,16 @@
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 100
 	update_icon()
+
+/obj/structure/roguemachine/vendor/merchant
+	lockid = "merchant"
+
+/obj/structure/roguemachine/vendor/merchant/Initialize()
+	. = ..()
+	for(var/X in list(/obj/item/roguekey/apartments/stall1,/obj/item/roguekey/apartments/stall2,/obj/item/roguekey/apartments/stall3))
+		var/obj/P = new X(src)
+		held_items[P] = list()
+		held_items[P]["NAME"] = P.name
+		held_items[P]["PRICE"] = 10
+	update_icon()
+

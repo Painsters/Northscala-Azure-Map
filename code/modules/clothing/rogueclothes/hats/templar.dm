@@ -32,6 +32,12 @@
 	item_state = "necrahelm_alt"
 	adjustable = CANT_CADJUST
 
+/obj/item/clothing/head/roguetown/helmet/heavy/psydonhelm
+	name ="otavan armet"
+	desc = "Headwear commonly worn by Templars in service to the Inquisition of Otava. PSYDON Endures."
+	icon_state = "psydonarmet"
+	item_state = "psydonarmet"
+
 /obj/item/clothing/head/roguetown/helmet/heavy/templar/malum
 	name = "malummite helmet"
 	desc = "Forged in a coal-black, this helmet carries a sigiled blade upon it's visor, ever reminding it's wearer of Malum's powerful gaze."

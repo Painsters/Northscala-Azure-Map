@@ -169,3 +169,65 @@
 	max_integrity = 150
 	sellprice = 100
 	smeltresult = /obj/item/ingot/gold
+
+/obj/item/clothing/mask/rogue/wildguard
+	name = "wild guard"
+	desc = "A mask shaped after the beasts of dendor."
+	icon_state = "wildguard"
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	max_integrity = 100
+	resistance_flags = FIRE_PROOF
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	anvilrepair = /datum/skill/craft/blacksmithing
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/mask/rogue/shepherd/shadowmask
+	name = "purple halfmask"
+	icon_state = "shadowmask"
+	desc = "For when one wants to conceal their face while performing dastardly deeds in the name of the crown."
+
+/obj/item/clothing/mask/rogue/ragmask
+	name = "rag mask"
+	icon_state = "ragmask"
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = NECK|MOUTH
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	adjustable = CAN_CADJUST
+	toggle_icon_state = TRUE
+	experimental_onhip = TRUE
+	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/ragmask/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = null
+			body_parts_covered = NECK
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_wear_mask()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = HIDEFACE|HIDEFACIALHAIR
+			body_parts_covered = NECK|MOUTH
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_wear_mask()
+
+/obj/item/clothing/mask/rogue/lordmask/naledi
+	name = "war scholar's mask"
+	item_state = "naledimask"
+	icon_state = "naledimask"
+	desc = "Runes and wards, meant for daemons; the gold has somehow rusted in unnatural, impossible agony. The most prominent of these etchings is in the shape of the Naledian psycross."
+	sellprice = 0
+

@@ -101,6 +101,7 @@
 	color = "#151615"
 	max_integrity = 150
 
+
 /obj/item/clothing/neck/roguetown/bervor
 	name = "bevor"
 	desc = "A steel bevor that protects the lower part of the head, that being the neck, mouth and nose."
@@ -128,6 +129,12 @@
 	body_parts_covered = NECK
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
+
+/obj/item/clothing/neck/roguetown/gorget/steel
+	name ="steel gorget"
+	smeltresult = /obj/item/ingot/steel
+	max_integrity = 300
+	icon_state = "sgorget"
 
 /obj/item/clothing/neck/roguetown/leather
 	name = "hardened leather gorget"
@@ -206,7 +213,7 @@
 	name = "amulet of Malum"
 	icon_state = "malum"
 	desc = ""
-	
+
 /obj/item/clothing/neck/roguetown/psicross/eora
 	name = "amulet of Eora"
 	desc = ""

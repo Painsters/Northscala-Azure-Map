@@ -340,6 +340,14 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	armor_class = ARMOR_CLASS_LIGHT
 
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy
+	name = "padded gambeson"
+	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor."
+	icon_state = "gambesonp"
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	sellprice = 30
+
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	name = "arming jacket"
 	desc = "Similar to a gambeson, it is meant to be used under heavier armor."
