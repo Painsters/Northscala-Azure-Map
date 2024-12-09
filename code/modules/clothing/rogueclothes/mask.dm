@@ -71,6 +71,11 @@
 	sellprice = 50
 	anvilrepair = /datum/skill/craft/blacksmithing
 
+/obj/item/clothing/mask/rogue/lordmask/tarnished
+	name = "tarnished golden halfmask"
+	desc = "Runes and wards, meant for daemons; the gold has somehow rusted in unnatural, impossible agony. The gold is now worthless, but that is not why the Naledi wear them."
+	sellprice = 20
+
 /obj/item/clothing/mask/rogue/lordmask/l
 	icon_state = "lmask_l"
 
@@ -121,6 +126,24 @@
 	name = "steel hound mask"
 	desc = "A steel mask, made for those who have snouts, protecting the eyes, nose and muzzle while obscuring the face."
 	icon_state = "smask_hound"
+
+/obj/item/clothing/mask/rogue/wildguard
+	name = "wild guard"
+	desc = "A mask shaped after the beasts of dendor."
+	icon_state = "wildguard"
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	max_integrity = 100
+	resistance_flags = FIRE_PROOF
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	anvilrepair = /datum/skill/craft/blacksmithing
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/mask/rogue/shepherd
 	name = "halfmask"

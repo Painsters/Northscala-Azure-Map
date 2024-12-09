@@ -498,6 +498,36 @@
 	lockid = "porta"
 
 // Towner homes keys
+/obj/item/roguekey/lord
+	name = "master key"
+	desc = "The Lord's key."
+	icon_state = "bosskey"
+	lockid = "lord"
+	visual_replacement = /obj/item/roguekey/royal
+
+/obj/item/roguekey/lord/Initialize()
+	. = ..()
+	if(SSroguemachine.key)
+		qdel(src)
+	else
+		SSroguemachine.key = src
+
+/obj/item/roguekey/lord/proc/anti_stall()
+	src.visible_message(span_warning("The Key of Azure Peak crumbles to dust, the ashes spiriting away in the direction of the Keep."))
+	SSroguemachine.key = null //Do not harddel.
+	qdel(src) //Anti-stall
+
+/obj/item/roguekey/lord/pre_attack(target, user, params)
+	. = ..()
+	if(istype(target, /obj/structure/closet))
+		var/obj/structure/closet/C = target
+		if(C.masterkey)
+			lockhash = C.lockhash
+	if(istype(target, /obj/structure/mineral_door))
+		var/obj/structure/mineral_door/D = target
+		if(D.masterkey)
+			lockhash = D.lockhash
+
 /obj/item/roguekey/royal
 	name = "Royal Key"
 	desc = "The Key to the royal chambers. It even feels pretentious."

@@ -224,6 +224,22 @@
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/under/roguetown/chainlegs/skirt
+	name = "steel chain skirt"
+	desc = "Interlinked metal rings that drape down to the crotch and no farther."
+	icon_state = "chain_skirt"
+	item_state = "chain_skirt"
+	body_parts_covered = GROIN
+	armor_class = ARMOR_CLASS_LIGHT
+
+/obj/item/clothing/under/roguetown/platelegs/skirt
+	name = "steel plate skirt"
+	desc = "Reinforced armor that doesn't even protect the legs."
+	icon_state = "plate_skirt"
+	item_state = "plate_skirt"
+	body_parts_covered = GROIN
+	armor_class = ARMOR_CLASS_LIGHT
+
 /obj/item/clothing/under/roguetown/loincloth
 	name = "loincloth"
 	desc = "Covers your dignity, but only just."
@@ -301,3 +317,10 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+
+/obj/item/clothing/under/roguetown/trou/leather/pontifex
+	name = "pontifex's chaqchur"
+	desc = "A handmade pair of baggy, thin leather pants. They end in a tight stocking around the calf, ballooning out around the thigh."
+	icon_state = "monkpants"
+	item_state = "monkpants"
+	naledicolor = TRUE

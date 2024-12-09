@@ -798,6 +798,19 @@
 	blocksound = SOFTHIT
 	clothing_flags = null
 
+/obj/item/clothing/head/roguetown/helmet/leather/saiga
+	name = "saiga skull"
+	desc = "Skull from big game. Looks like it could withstand some damage."
+	icon_state = "saigahead"
+	item_state = "saigahead"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	armor = list("blunt" = 60, "slash" = 40, "stab" = 45, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = HEADCOVERSEYES
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
+
 /obj/item/clothing/head/roguetown/wizhat
 	name = "wizard hat"
 	desc = "Used to distinguish dangerous wizards from senile old men."
@@ -872,6 +885,17 @@
 	if(wise.get_item_by_slot(SLOT_HEAD) == src)
 		wise.change_stat("intelligence", -2, "wisehat")
 		to_chat(wise, span_red("I lose wisdom."))
+
+/obj/item/clothing/head/roguetown/witchhat
+	name = "witch hat"
+	desc = ""
+	icon_state = "witch"
+	sewrepair = TRUE
+
+/obj/item/clothing/head/roguetown/archercap
+	name = "archer's cap"
+	desc = "For the merry men."
+	icon_state = "archercap"
 
 /obj/item/clothing/head/roguetown/physician
 	name = "doctor's hat"
@@ -1021,3 +1045,29 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	max_integrity = 425
 	smeltresult = /obj/item/ingot/blacksteel
+
+/obj/item/clothing/head/roguetown/roguehood/hierophant
+	name = "hierophant's pashmina"
+	desc = "A thick hood that covers one's entire head, should they desire, or merely acts as a scarf otherwise."
+	icon_state = "deserthood"
+	item_state = "deserthood"
+	naledicolor = TRUE
+
+/obj/item/clothing/head/roguetown/roguehood/pontifex
+	name = "pontifex's pashmina"
+	desc = "A slim hood with thin, yet dense fabric. Stretchy and malleable, allowing for full flexibility and mobility."
+	icon_state = "monkhood"
+	item_state = "monkhood"
+	naledicolor = TRUE
+
+/obj/item/clothing/head/roguetown/bucklehat //lifeweb sprite
+	name = "folded hat"
+	desc = "A plain leather hat with decorative buckle. Made popular by the ne'er-do-wells of Etrusca."
+	icon_state = "bucklehat"
+	sewrepair = TRUE
+
+/obj/item/clothing/head/roguetown/duelhat //lifeweb sprite
+	name = "duelist's hat"
+	desc = "A feathered leather hat, to show them all your superiority."
+	icon_state = "duelhat"
+	sewrepair = TRUE
