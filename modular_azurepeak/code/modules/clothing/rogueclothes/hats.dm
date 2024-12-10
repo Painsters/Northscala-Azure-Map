@@ -7,7 +7,6 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
-	smelt_bar_num = 2
 
 /obj/item/clothing/head/roguetown/helmet/heavy/malum
 	name = "helm of malum"
@@ -18,7 +17,6 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
-	smelt_bar_num = 2
 
 /obj/item/clothing/head/roguetown/helmet/heavy/necran
 	name = "necran helmet"
@@ -29,4 +27,3 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
-	smelt_bar_num = 2

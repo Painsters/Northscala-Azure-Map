@@ -33,12 +33,10 @@
 	if(do_after(user,70, target = src))
 		if((dice_roll) <= user.STAINT)
 			to_chat(user, span_notice("I solve [src] fairly easily. I feel rather satisfied."))
-			user.add_stress(/datum/stressevent/puzzle_easy)
 			finished_ckeys += ckey
 			playsound(src.loc, 'sound/foley/doors/lock.ogg', 75, TRUE)
 		else
 			to_chat(user, span_warning("I can't solve \the [src]. Cack! Frustrated, I leave it alone."))
-			user.add_stress(/datum/stressevent/puzzle_fail)
 			finished_ckeys += ckey
 			playsound(src.loc, 'sound/foley/doors/lockrattle.ogg', 75, TRUE)
 
@@ -73,12 +71,10 @@
 	if(do_after(user,70, target = src))
 		if((dice_roll) <= user.STAINT)
 			to_chat(user, span_notice("I solve [src] fairly easily. I feel rather satisfied."))
-			user.add_stress(/datum/stressevent/puzzle_medium)
 			finished_ckeys += ckey
 			playsound(src.loc, 'sound/foley/doors/lock.ogg', 75, TRUE)
 		else
 			to_chat(user, span_warning("I can't solve [src]. Frustrated, I leave it alone."))
-			user.add_stress(/datum/stressevent/puzzle_fail)
 			finished_ckeys += ckey
 			playsound(src.loc, 'sound/foley/doors/lockrattle.ogg', 75, TRUE)
 
@@ -114,7 +110,6 @@
 	if(do_after(user,100, target = src))
 		if((dice_roll) + 4 <= user.STAINT)
 			to_chat(user, span_notice("After much deliberation, I solve \the [src]!"))
-			user.add_stress(/datum/stressevent/puzzle_impossible)
 			finished_ckeys += ckey
 			playsound(src.loc, 'sound/foley/doors/lockrattle.ogg', 75, TRUE)
 			to_chat(user, span_notice("As I pop open \the [src], I feel a tingling wave run from my head to my feet. A piece of an azure crystal tumbles out. When I grab it, it's gone- and I suddenly feel invigorated."))
@@ -128,7 +123,6 @@
 			playsound(src.loc, 'sound/items/visor.ogg', 75, TRUE)
 		else
 			to_chat(user, span_warning("I can't even start to solve [src]. Feeling like an absolute fool, I put it aside."))
-			user.add_stress(/datum/stressevent/puzzle_fail)
 			finished_ckeys += ckey
 			playsound(src.loc, 'sound/foley/doors/lockrattle.ogg', 75, TRUE)
 
