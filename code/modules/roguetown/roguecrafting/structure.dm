@@ -237,7 +237,7 @@
 
 /datum/crafting_recipe/roguetown/structure/dye_bin
 	name = "dye bin"
-	result = /obj/machinery/dye_bin
+	result = /obj/structure/dye_bin
 	reqs = list(
 		/obj/item/grown/log/tree/small = 1,
 	)
